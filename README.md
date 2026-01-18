@@ -6,4 +6,5 @@ Installation for linux:
 sudo apt install git
 git clone https://github.com/vas4o/Bashfetch.git
 cd Bashfetch
+chmod +x bashfetch.sh
 ./bashfetch.sh
