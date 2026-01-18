@@ -1,8 +1,9 @@
 #!/bin/bash
-echo -e "Hostname:\n$(hostname)"
-echo -e "Operating System:\n$(uname -o)"
-echo -e "Kernel version:\n$(uname -r)"
-echo -r "Processor Type:\n$(uname -m)"
-echo -e "Uptime:\n$(uptime -p)"
-echo -e "Current User:\n$(whoami)"
-
+echo "Hostname:        $(hostname)"
+echo "Distro:          $(grep '^PRETTY_NAME=' /etc/os-release | cut -d= -f2- | tr -d '"')"
+echo "Kernel version:  $(uname -r)"
+echo "Architecture:    $(uname -m)"
+echo "CPU Cores:       $(nproc)"
+echo "Total RAM:       $(free -h | awk '/^Mem:/ {print $2}')"
+echo "Uptime:          $(uptime -p)"
+echo "Current User:    $(whoami)"
